@@ -16,3 +16,14 @@ body {
   line-height: 1.5;
 }
 
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
