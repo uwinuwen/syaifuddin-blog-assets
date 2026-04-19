@@ -1,6 +1,4 @@
 /* --- Variables --- */
-
-
 :root {
   --primary: #2563eb;
   --bg-header: rgba(255, 255, 255, 0.8);
@@ -9,7 +7,18 @@
   --text-muted: #475569;
 }
 
-/* --- Layout --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header Utama */
 .site-header {
   position: sticky;
   top: 0;
@@ -24,16 +33,33 @@
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 1.5rem;
-  height: 4rem;
+  height: 4rem; /* h-16 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
 }
 
-/* --- Navigation Desktop --- */
+/* Logo */
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.logo-icon {
+  background: var(--primary);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  font-family: monospace;
+}
+
+/* Navigasi Desktop */
 .desktop-nav {
-  display: none;
+  display: none; /* Sembunyi di mobile */
 }
 
 @media (min-width: 768px) {
@@ -44,10 +70,10 @@
 }
 
 .nav-item {
+  text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-muted);
-  text-decoration: none;
   transition: 0.2s;
 }
 
@@ -55,66 +81,29 @@
   color: var(--primary);
 }
 
-/* --- Search Overlay Desktop --- */
-.search-overlay-wrapper {
-  display: none; /* Kita toggle pakai JS */
-  position: absolute;
-  inset: 0;
-  z-index: 40;
-  align-items: center;
-  justify-content: center;
-  background: white;
+/* Card Artikel di Beranda */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.search-form {
-  width: 100%;
-  max-width: 400px;
-  display: flex;
-  align-items: center;
-  background: #f1f5f9;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-}
-
-.search-input {
-  width: 100%;
-  border: none;
-  background: transparent;
-  outline: none;
-  padding: 0 0.5rem;
-}
-
-/* --- Mobile Components --- */
-.mobile-search-bar {
-  display: none;
-  position: fixed;
-  top: 4rem;
-  width: 100%;
-  background: white;
-  padding: 1rem;
-  border-bottom: 1px solid var(--border);
-  z-index: 60;
-}
-
-.mobile-only {
-  display: block;
-}
-
-@media (min-width: 768px) {
-  .mobile-only {
-    display: none;
-  }
-}
-
-/* Card Artikel */
 .post-card {
-  margin-bottom: 2.5rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 2rem;
 }
 
 .post-card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.875rem;
+  font-weight: 800;
   color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.post-card-body {
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
 .mobile-menu {
