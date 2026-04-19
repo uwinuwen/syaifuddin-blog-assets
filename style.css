@@ -1,0 +1,116 @@
+/* --- Variables --- */
+:root {
+  --primary: #2563eb;
+  --bg-header: rgba(255, 255, 255, 0.8);
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+}
+
+/* --- Layout --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-header);
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* --- Navigation Desktop --- */
+.desktop-nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+.nav-item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.nav-item:hover {
+  color: var(--primary);
+}
+
+/* --- Search Overlay Desktop --- */
+.search-overlay-wrapper {
+  display: none; /* Kita toggle pakai JS */
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+.search-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 0 0.5rem;
+}
+
+/* --- Mobile Components --- */
+.mobile-search-bar {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  width: 100%;
+  background: white;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 60;
+}
+
+.mobile-only {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Card Artikel */
+.post-card {
+  margin-bottom: 2.5rem;
+}
+
+.post-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
